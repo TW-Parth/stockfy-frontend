@@ -19,6 +19,5 @@ export function updateProfile(payload) {
 }
 
 export function logout() {
-  localStorage.clear();
   return AxiosInstance.post(API_URLS.LOGOUT);
 }

@@ -4,9 +4,14 @@ import { logout } from '../../services/auth/auth.services';
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const logoutHandler = () => {
-    logout();
-    navigate('/');
+  const logoutHandler = async () => {
+    try{
+      await logout();
+      localStorage.clear();
+      navigate('/');
+    }catch(e){
+      console.log(e);
+    }
   };
 
   return (

@@ -1,5 +1,6 @@
 export const LOCAL_STORAGE_KEYS = {
   ACCESS_TOKEN: 'accessToken',
+  USER: 'user'
 };
 
 export const API_URLS = {
@@ -8,7 +9,8 @@ export const API_URLS = {
   GET_PROFILE: '/auth',
   UPDATE_PROFILE: '/auth/me',
   LOGOUT: '/auth/logout',
-  DASHBOARD : '/dashboard'
+  DASHBOARD: '/dashboard',
+  GET_WEBHOOK: '/webhook/webhookConfig',
 };
 
 export const SUCCESS_MESSAGE = {
