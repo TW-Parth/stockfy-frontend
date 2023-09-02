@@ -2,11 +2,11 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import DashBoardLayout from "../../container/dashboard/DashboardLayout";
 
-const DashboardLayoutComponent = () => {
+const DashboardLayoutComponent = ({children}) => {
   return (
     <div>
       <Sidebar />
-      <DashBoardLayout />
+      {children}
     </div>
   );
 };

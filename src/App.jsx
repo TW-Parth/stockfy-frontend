@@ -4,7 +4,7 @@ import HomePage from './container/home/Homepage';
 import Login from './container/auth/Login';
 import Signup from './container/auth/Signup';
 import { LOCAL_STORAGE_KEYS } from './helpers/constant';
-import DashboardLayoutComponent from './component/layout/DashboardLayoutComponent';
+import DashBoardLayout from './container/dashboard/DashboardLayout';
 
 const PublicRoutes = ({children}) => {
   if(localStorage.getItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN) === null){
@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<PublicRoutes><Login /></PublicRoutes>} />
-        <Route path="/dashboard/*" element={<PrivateRoutes><DashboardLayoutComponent /></PrivateRoutes>} />
+        <Route path="/dashboard/*" element={<PrivateRoutes><DashBoardLayout /></PrivateRoutes>} />
         <Route path="/*" element={<Navigate to="/" replace />} />
         <Route path="/signup" Component={Signup} />
       </Routes>

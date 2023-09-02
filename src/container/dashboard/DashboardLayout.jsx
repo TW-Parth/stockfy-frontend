@@ -1,14 +1,21 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import ProductList from "./products/ProductList";
 import Dashboard from "./index";
+import DashboardLayoutComponent from '../../component/layout/DashboardLayoutComponent';
+import Profile from "./Profile";
+import Settings from "./Settings";
 
 const DashBoardLayout = () => {
     return (
-        <Routes>
-            <Route path="/" Component={Dashboard} />
-            <Route path="/product-list" Component={ProductList} />
-            <Route path="/*" element={<Navigate to="/dashboard" replace />} />
-        </Routes>
+        <DashboardLayoutComponent>
+            <div>
+                <Routes>
+                    <Route path="/" Component={Dashboard} />
+                    <Route path="/profile" Component={Profile} />
+                    <Route path="/settings" Component={Settings} />
+                    <Route path="/*" element={<Navigate to="/dashboard" replace />} />
+                </Routes>
+            </div>
+        </DashboardLayoutComponent>
     )
 }
 
