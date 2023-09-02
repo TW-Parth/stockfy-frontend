@@ -1,0 +1,50 @@
+.navbar{
+    padding: 0;
+
+    .navbar-brand{
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-nav{
+        .nav-item{
+            .nav-link{
+                font-size: 22px;
+                line-height: 1;
+                color: $white;
+
+                &:hover{
+                    color: $primary;
+                }
+
+                &.active{
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+
+.sidebar{
+    .navbar{
+        
+    
+        .navbar-nav{
+            .nav-item{
+                .nav-link{
+                    padding: 8px 15px;
+                    color: $black;
+                    border-radius: 5px;
+                    margin-bottom: 5px;
+    
+                    &:hover,
+                    &.active{
+                        background: $primary;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

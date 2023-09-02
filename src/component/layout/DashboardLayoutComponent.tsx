@@ -1,13 +1,16 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import DashBoardLayout from "../../container/dashboard/DashboardLayout";
+import Header from "../global/Header";
 
-const DashboardLayoutComponent = ({children}) => {
+const DashboardLayoutComponent = ({ children }) => {
   return (
-    <div>
-      <Sidebar />
-      {children}
-    </div>
+    <>
+      <Header />
+      <div className="app-wrapper dashboard-wrapper">
+        <Sidebar />
+        {children}
+      </div>
+    </>
   );
 };
 
