@@ -102,3 +102,24 @@ img {
   padding: 320px 0;
   color: $black;
 }
+
+
+.subscription-section{
+  padding: 50px 0;
+  .subscription-card{
+    border: none;
+    border-radius: 42px;
+    // background: url("src/assets/images/bg-img.jpg") no-repeat;
+    background: rgb(242,57,26);
+    background: linear-gradient(90deg, rgba(242,57,26,0.9864320728291317) 0%, rgba(255,139,3,1) 100%);
+    padding: 30px;
+    overflow: hidden;
+    background-size: cover;
+
+    .sub-img{
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+}

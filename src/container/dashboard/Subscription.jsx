@@ -1,5 +1,7 @@
+import SubscriptionBlock from '../home/SubscriptionBlock';
+
 const Subscription = () => {
-  return <p>Subscription Page</p>;
+  return <SubscriptionBlock />;
 };
 
 export default Subscription;
