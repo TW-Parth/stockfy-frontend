@@ -12,6 +12,10 @@ const Signup = () => {
             lastName: '',
             email: '',
             password: '',
+            gstNumber: '',
+            eCommerceName: '',
+            eCommerceWebsite: '',
+            phoneNumber: '',
         },
         validateOnBlur: true,
         validateOnChange: true,
@@ -32,10 +36,14 @@ const Signup = () => {
     <div className="Login-Container">
         <h1>Signup</h1>
         <form onSubmit={handleSubmit}>
-            <TextField label='First Name' name='firstName' value={values.firstName} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.firstName && errors.firstName)} errorMessage={errors.firstName}/>
-            <TextField label='Last Name' name='lastName' value={values.lastName} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.lastName && errors.lastName)} errorMessage={errors.lastName}/>
-            <TextField label='Email' name='email' value={values.email} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.email && errors.email)} errorMessage={errors.email}/>
-            <PasswordField label='Password' name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.password && errors.password)} errorMessage={errors.password}/>
+            <TextField id='firstName' label='First Name' name='firstName' value={values.firstName} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.firstName && errors.firstName)} errorMessage={errors.firstName}/>
+            <TextField id='lastName' label='Last Name' name='lastName' value={values.lastName} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.lastName && errors.lastName)} errorMessage={errors.lastName}/>
+            <TextField id='email' label='Email' name='email' value={values.email} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.email && errors.email)} errorMessage={errors.email}/>
+            <PasswordField id='password' label='Password' name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.password && errors.password)} errorMessage={errors.password}/>
+            <TextField id='gstNumber' label='GST No.' name='gstNumber' value={values.gstNumber} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.gstNumber && errors.gstNumber)} errorMessage={errors.gstNumber}/>
+            <TextField id='eCommerceName' label='E-Commerce Name' name='eCommerceName' value={values.eCommerceName} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.eCommerceName && errors.eCommerceName)} errorMessage={errors.eCommerceName}/>
+            <TextField id='eCommerceWebsite' label='E-Commerce Website' name='eCommerceWebsite' value={values.eCommerceWebsite} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.eCommerceWebsite && errors.eCommerceWebsite)} errorMessage={errors.eCommerceWebsite}/>
+            <TextField id='phoneNumber' label='Phone Number' name='phoneNumber' value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.phoneNumber && errors.phoneNumber)} errorMessage={errors.phoneNumber}/>
             <button type="submit" disabled={isSubmitting}>Submit</button>
             <Link to={'/login'}>Login</Link>
         </form>
