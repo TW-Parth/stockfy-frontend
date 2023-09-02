@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ImgLogo from '../../assets/images/logo.svg';
 
 const HomePage = () => {
@@ -20,6 +21,9 @@ const HomePage = () => {
               <div className="row align-content-center">
                 <div className="col-md-6 col-lg-6">
                   <h1>Hello</h1>
+                  <Link to={'/login'}>Login</Link>
+                  <br/>
+                  <Link to={'/signup'}>Sign Up</Link>
                 </div>
                 <div className="col-md-6 col-lg-6"></div>
               </div>

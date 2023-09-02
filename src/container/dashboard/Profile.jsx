@@ -1,14 +1,31 @@
 import { useFormik } from 'formik';
-import TextField from '../../component/Input/TextField';
-import PasswordField from '../../component/Input/PasswordField';
-import { Link, useNavigate } from 'react-router-dom';
-import SignupSchema from '../../validationSchema/SignupSchema';
-import { signUp } from '../../services/auth/auth.services';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import TextField from '../../component/Input/TextField';
 import { SUCCESS_MESSAGE } from '../../helpers/constant';
+import { getProfile, updateProfile } from '../../services/auth/auth.services';
+import UpdateProfileSchema from '../../validationSchema/UpdateProfileSchema';
 
 const Profile = () => {
-  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getProfileData = async () => {
+      const { data } = await getProfile();
+      setValues({
+        firstName: data?.user?.firstName,
+        lastName: data?.user?.lastName,
+        email: data?.user?.email,
+        password: data?.user?.password,
+        gstNumber: data?.user?.gstNumber,
+        eCommerceName: data?.user?.eCommerceName,
+        eCommerceWebsite: data?.user?.eCommerceWebsite,
+        phoneNumber: data?.user?.phoneNumber,
+      })
+    }
+    getProfileData();
+  } , [])
+  
   const form = useFormik({
     initialValues: {
       firstName: '',
@@ -22,19 +39,25 @@ const Profile = () => {
     },
     validateOnBlur: true,
     validateOnChange: true,
-    validationSchema: SignupSchema,
+    validationSchema: UpdateProfileSchema,
     onSubmit: async (values) => {
       try {
-        await signUp(values);
-        toast.success(SUCCESS_MESSAGE.REGISTER);
-        navigate('/login');
+        let payload = {
+          firstName : values.firstName,
+          lastName: values.lastName,
+          phoneNumber: values.phoneNumber,
+          eCommerceName : values.eCommerceName,
+          eCommerceWebsite : values.eCommerceWebsite
+        }
+        await updateProfile(payload);
+        toast.success(SUCCESS_MESSAGE.PROFILE_UPDATE);
       } catch (err) {
         console.log(err);
       }
     },
   });
 
-  const { values, touched, handleChange, handleBlur, errors, isSubmitting, handleSubmit } = form;
+  const { values, touched, handleChange, handleBlur, errors, isSubmitting, handleSubmit, setValues } = form;
 
   return (
     <>
@@ -85,24 +108,9 @@ const Profile = () => {
                           value={values.email}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                          disabled={isSubmitting}
+                          disabled={true}
                           error={Boolean(touched.email && errors.email)}
                           errorMessage={errors.email}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6 col-lg-6">
-                      <div className="form-group">
-                        <PasswordField
-                          id="password"
-                          label="Password"
-                          name="password"
-                          value={values.password}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          disabled={isSubmitting}
-                          error={Boolean(touched.password && errors.password)}
-                          errorMessage={errors.password}
                         />
                       </div>
                     </div>
@@ -115,7 +123,7 @@ const Profile = () => {
                           value={values.gstNumber}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                          disabled={isSubmitting}
+                          disabled={true}
                           error={Boolean(touched.gstNumber && errors.gstNumber)}
                           errorMessage={errors.gstNumber}
                         />
@@ -151,6 +159,7 @@ const Profile = () => {
                         />
                       </div>
                     </div>
+                    
                     <div className="col-md-6 col-lg-6">
                       <div className="form-group">
                         <TextField
@@ -165,6 +174,8 @@ const Profile = () => {
                           errorMessage={errors.phoneNumber}
                         />
                       </div>
+                    </div>
+                    <div className="col-md-6 col-lg-6">
                     </div>
                     <div className="col-md-6 col-lg-6">
                       <button className="btn btn-primary w-100 mb-2" type="submit" disabled={isSubmitting}>
