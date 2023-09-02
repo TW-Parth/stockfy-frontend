@@ -1,4 +1,6 @@
 .sidebar{
+    display: flex;
+    flex-direction: column;
     background: $secondary;
     max-width: 250px;
     position: fixed;
@@ -6,6 +8,18 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: calc(100vh - 120px);
+    height: calc(100% - 120px);
     padding: 15px;
+
+    .bottom-menu{
+        margin-top: auto;
+
+        .btn{
+            color: $primary;
+
+            &:hover{
+                color: $white;
+            }
+        }
+    }
 }

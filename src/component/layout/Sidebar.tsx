@@ -6,7 +6,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <nav className="navbar main-sidebar">
         <div className="navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mb-2 mb-lg-0">
+          <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link active" to="/dashboard">
                 Dashboard
@@ -22,9 +22,20 @@ const Sidebar = () => {
                 Settings
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/dashboard/subscription">
+                Subscription
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
+
+      <div className="bottom-menu">
+        <button type="button" className="btn btn-outline-primary w-100">
+          Log Out
+        </button>
+      </div>
     </div>
   );
 };
