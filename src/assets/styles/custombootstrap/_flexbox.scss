@@ -1,0 +1,64 @@
+// flexbox
+%flexbox {
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: -webkit-box !important;
+  display: flex !important;
+  -webkit-box-pack: justify !important;
+  -webkit-justify-content: space-between !important;
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+.flexbox {
+  @extend %flexbox;
+}
+%flexbox-c {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+.flexbox-c {
+  @extend %flexbox-c;
+}
+
+%flexbox-1 {
+  -webkit-box-flex: 1 !important;
+  -webkit-flex: 1 !important;
+  -ms-flex: 1 !important;
+  flex: 1 !important;
+}
+.flexbox-1 {
+  @extend %flexbox-1;
+}
+
+%flexbox-align-c {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+
+  justify-content: center !important;
+  -ms-flex-pack: justify !important;
+  -webkit-justify-content: center;
+
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+.flexbox-align-c {
+  @extend %flexbox-align-c;
+}
+
+// .align-item-end {
+//   align-items: flex-end !important;
+// }

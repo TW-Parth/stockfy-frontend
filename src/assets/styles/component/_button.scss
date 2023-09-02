@@ -1,0 +1,31 @@
+// Componant: button
+
+button,
+.btn {
+  cursor: pointer;
+  -moz-transition: all 0.3s !important;
+  -webkit-transition: all 0.3s !important;
+  -ms-transition: all 0.3s !important;
+  -o-transition: all 0.3s !important;
+  transition: all 0.3s !important;
+
+  &:focus,
+  &:hover {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.btn {
+  @include media-breakpoint-down(md) {
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-padding-y: 1rem;
+    --bs-btn-border-radius: 2rem;
+  }
+}
+
