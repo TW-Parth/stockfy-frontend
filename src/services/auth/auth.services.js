@@ -9,3 +9,11 @@ export function login(payload) {
 export function signUp(payload) {
   return AxiosInstance.post(API_URLS.SIGNUP, convertJsonToFormData(payload));
 }
+
+export function getProfile(payload) {
+  return AxiosInstance.get(API_URLS.GET_PROFILE, convertJsonToFormData(payload));
+}
+
+export function updateProfile(payload) {
+  return AxiosInstance.put(API_URLS.UPDATE_PROFILE, convertJsonToFormData(payload));
+}
