@@ -1,9 +1,8 @@
 import { useFormik } from 'formik';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import TextField from '../../component/Input/TextField';
-import { SUCCESS_MESSAGE } from '../../helpers/constant';
+import { LOCAL_STORAGE_KEYS, SUCCESS_MESSAGE } from '../../helpers/constant';
 import { getProfile, updateProfile } from '../../services/auth/auth.services';
 import UpdateProfileSchema from '../../validationSchema/UpdateProfileSchema';
 
@@ -49,7 +48,8 @@ const Profile = () => {
           eCommerceName : values.eCommerceName,
           eCommerceWebsite : values.eCommerceWebsite
         }
-        await updateProfile(payload);
+        const { data } = await updateProfile(payload);
+        localStorage.setItem(LOCAL_STORAGE_KEYS.USER , JSON.stringify(data?.user));
         toast.success(SUCCESS_MESSAGE.PROFILE_UPDATE);
       } catch (err) {
         console.log(err);
@@ -179,13 +179,8 @@ const Profile = () => {
                     </div>
                     <div className="col-md-6 col-lg-6">
                       <button className="btn btn-primary w-100 mb-2" type="submit" disabled={isSubmitting}>
-                        Submit
+                        Update
                       </button>
-                    </div>
-                    <div className="col-md-6 col-lg-6">
-                      <Link className="btn btn-secondary w-100" to={'/login'}>
-                        Login
-                      </Link>
                     </div>
                   </div>
                 </form>
