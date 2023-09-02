@@ -11,10 +11,12 @@ export const API_URLS = {
   LOGOUT: '/auth/logout',
   DASHBOARD: '/dashboard',
   GET_WEBHOOK: '/webhook/webhookConfig',
+  FILE_UPLOAD : 'product/import'
 };
 
 export const SUCCESS_MESSAGE = {
   REGISTER: 'REGISTERED SUCCESSFULLY',
   LOGIN: 'Logged in successfully',
   PROFILE_UPDATE: 'Profile updated successfully',
+  FILE_UPLOAD : 'File uploaded successfully'
 };

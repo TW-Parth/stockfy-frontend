@@ -1,11 +1,15 @@
-import { IconCopy } from '../../component/global/Icons';
+import { useEffect, useRef, useState } from 'react';
+import { toast } from 'react-toastify';
 import ImgFile from '../../assets/images/file-upload.svg';
-import { useEffect, useState } from 'react';
-import { getWebhookConfig } from '../../services/settings/settings.services';
+import { IconCopy } from '../../component/global/Icons';
+import { SUCCESS_MESSAGE } from '../../helpers/constant';
+import { getWebhookConfig, handleFile } from '../../services/settings/settings.services';
 
 const Settings = () => {
   const [webhook, setWebhook] = useState();
+  const [uploadingFile, setUploadingFile] = useState(false);
 
+  const inputRef = useRef();
   useEffect(()=> {
     getWebhookUrl();
   }, [])
@@ -15,6 +19,24 @@ const Settings = () => {
     setWebhook({
       url: data?.url,
     })
+  }
+
+  const handleFileUpload = async (e) => {
+    setUploadingFile(true);
+    try{
+      const payload = new FormData();
+      payload.append('file', e.target.files[0]);
+      await handleFile(payload);
+      toast.success(SUCCESS_MESSAGE.FILE_UPLOAD);
+    }catch(e){
+      console.log(e);
+    }finally{
+      setUploadingFile(false);
+    }
+  }
+
+  const handleDivClick = () => {
+    inputRef.current.click();
   }
 
   return (
@@ -36,14 +58,14 @@ const Settings = () => {
                     </div>
                   </div>
 
-                  <div className="img-upload-block">
+                  <div className="img-upload-block" onClick={uploadingFile ? undefined : handleDivClick}>
                     <div className="form-group mb-0">
                       <label className="form-label font-700">Historical Data</label>
                       <div className="user-img-block d-flex justify-content-center">
                         <img src={ImgFile} alt="" />
                       </div>
                       <div className="upload-btn ">
-                        <input className="form-control" id="Choose a file" name="file" type="file" />
+                        <input ref={inputRef} disabled={uploadingFile} className="form-control" id="Choose a file" name="file" type="file" onChange={handleFileUpload} />
                         <button type="button" className="btn btn-primary w-100">
                           Upload a file
                         </button>
