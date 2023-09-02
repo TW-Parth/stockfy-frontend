@@ -1,7 +1,22 @@
 import { IconCopy } from '../../component/global/Icons';
 import ImgFile from '../../assets/images/file-upload.svg';
+import { useEffect, useState } from 'react';
+import { getWebhookConfig } from '../../services/settings/settings.services';
 
 const Settings = () => {
+  const [webhook, setWebhook] = useState();
+
+  useEffect(()=> {
+    getWebhookUrl();
+  }, [])
+
+  const getWebhookUrl = async () => {
+    const { data } = await getWebhookConfig();
+    setWebhook({
+      url: data?.url,
+    })
+  }
+
   return (
     <>
       <div className="dashboard-Container">
@@ -14,7 +29,7 @@ const Settings = () => {
                   <div className="key-block">
                     <label className="form-label font-700">Web-Hook</label>
                     <div className="api-key">
-                      <span>acjbsvbffvbubvsbvjdsbvdbf161456456svdjshbvjh</span>
+                      <span>{webhook.url}</span>
                       <button type="button" className="btn btn-primary">
                         <IconCopy />
                       </button>

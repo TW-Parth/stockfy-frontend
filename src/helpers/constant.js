@@ -9,7 +9,8 @@ export const API_URLS = {
   GET_PROFILE: '/auth',
   UPDATE_PROFILE: '/auth/me',
   LOGOUT: '/auth/logout',
-  DASHBOARD : '/dashboard'
+  DASHBOARD: '/dashboard',
+  GET_WEBHOOK: '/webhook/webhookConfig',
 };
 
 export const SUCCESS_MESSAGE = {
