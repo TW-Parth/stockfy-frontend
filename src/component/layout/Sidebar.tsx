@@ -1,8 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../../services/auth/auth.services';
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const logoutHandler = () => {
+    logout();
+    navigate('/');
+  };
+
   return (
     <div className="sidebar">
       <nav className="navbar main-sidebar">
@@ -33,7 +39,7 @@ const Sidebar = () => {
       </nav>
 
       <div className="bottom-menu">
-        <button type="button" className="btn btn-outline-primary w-100" onClick={logout}>
+        <button type="button" className="btn btn-outline-primary w-100" onClick={logoutHandler}>
           Log Out
         </button>
       </div>
