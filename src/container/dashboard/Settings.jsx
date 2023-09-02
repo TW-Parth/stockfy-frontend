@@ -29,7 +29,7 @@ const Settings = () => {
                   <div className="key-block">
                     <label className="form-label font-700">Web-Hook</label>
                     <div className="api-key">
-                      <span>{webhook.url}</span>
+                      <span>{webhook?.url}</span>
                       <button type="button" className="btn btn-primary">
                         <IconCopy />
                       </button>
