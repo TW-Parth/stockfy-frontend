@@ -7,11 +7,11 @@ const AxiosInstance = axios.create({
 });
 
 AxiosInstance.interceptors.request.use((req) => {
-  if(localStorage.getItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN) !== null){
+  if (localStorage.getItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN) !== null) {
     req.headers = {
       ...req.headers,
-      Authorization : `Bearer ${localStorage.getItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN)}`
-    }
+      Authorization: `Bearer ${localStorage.getItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN)}`,
+    };
   }
   return req;
 });
