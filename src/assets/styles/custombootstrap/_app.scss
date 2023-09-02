@@ -95,3 +95,10 @@ img {
     }
   }
 }
+
+.banner-section{
+  background: url("src/assets/images/banner.jpg") no-repeat;
+  background-size: cover;
+  padding: 320px 0;
+  color: $black;
+}

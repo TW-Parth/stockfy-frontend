@@ -13,12 +13,14 @@
                 line-height: 1;
                 color: $white;
 
-                &:hover{
+                &:hover,
+                &.active{
                     color: $primary;
                 }
 
-                &.active{
-                    color: $primary;
+                img{
+                    max-width: 30px;
+                    max-height: 30px;
                 }
             }
         }
@@ -28,8 +30,6 @@
 
 .sidebar{
     .navbar{
-        
-    
         .navbar-nav{
             .nav-item{
                 .nav-link{

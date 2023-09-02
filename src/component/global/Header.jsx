@@ -1,4 +1,6 @@
-import ImgLogo from "../../assets/images/logo.svg";
+import { Link } from 'react-router-dom';
+import ImgLogo from '../../assets/images/logo.svg';
+import ImgUser from '../../assets/images/user.svg';
 
 const Header = () => {
   return (
@@ -10,10 +12,13 @@ const Header = () => {
           </a>
           <div className="h-right">
             <ul className="navbar-nav">
-              <li className="nav-item pro-account">
-                <a className="nav-link" href="/">
-                  User
-                </a>
+              <li className="nav-item user-account">
+                <Link className="nav-link" to={'/login'}>
+                  <img src={ImgUser} alt="" />
+                </Link>
+                {/* <a className="nav-link" href="/">
+                  <img src={ImgUser} alt="" />
+                </a> */}
               </li>
             </ul>
           </div>
