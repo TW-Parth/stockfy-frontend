@@ -20,6 +20,7 @@ const Login = () => {
       try {
         const res = await login(values);
         localStorage.setItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN , res?.data?.token);
+        localStorage.setItem(LOCAL_STORAGE_KEYS.USER , JSON.stringify(res?.data?.user));
         navigate('/dashboard');
       } catch (err) {
         console.log(err);

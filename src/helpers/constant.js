@@ -1,5 +1,6 @@
 export const LOCAL_STORAGE_KEYS = {
   ACCESS_TOKEN: 'accessToken',
+  USER: 'user'
 };
 
 export const API_URLS = {
