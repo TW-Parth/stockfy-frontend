@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import HomePage from './container/home/Homepage';
 import Login from './container/auth/Login';
 import Signup from './container/auth/Signup';
-import { LOCAL_STORAGE_KEYS } from './helpers/contant';
+import { LOCAL_STORAGE_KEYS } from './helpers/constant';
 import DashboardLayoutComponent from './component/layout/DashboardLayoutComponent';
 
 const PublicRoutes = ({children}) => {

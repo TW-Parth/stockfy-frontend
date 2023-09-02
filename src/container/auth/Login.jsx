@@ -3,6 +3,7 @@ import LoginSchema from "../../validationSchema/LoginSchema";
 import TextField from "../../component/Input/TextField";
 import PasswordField from "../../component/Input/PasswordField";
 import { Link } from "react-router-dom";
+import { login } from '../../services/auth/login.services';
 
 const Login = () => {
 
@@ -16,7 +17,8 @@ const Login = () => {
         validationSchema: LoginSchema,
         onSubmit: async (values) => {
             try {
-                console.log(values, 'values');
+                const res = await login(values);
+                console.log(res)
             }
             catch(err) {
                 console.log(err);
