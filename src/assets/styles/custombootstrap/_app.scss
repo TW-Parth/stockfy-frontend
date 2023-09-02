@@ -41,6 +41,7 @@ img {
     border: 1px solid #fff;
     border-radius: 5px;
     padding: 5px;
+    height: 38px;
 
     span{
       display: block;
@@ -121,5 +122,24 @@ img {
         max-width: 100%;
       }
     }
+  }
+}
+
+.benefits-section{
+  .Benefits-img{
+    img{
+      width: 100%;
+    }
+  }
+}
+
+
+.contact-section{
+  padding: 50px 0;
+
+  .contact-inner{
+    padding: 30px;
+    background: #BBBBBB;
+    border-radius: 30px;
   }
 }

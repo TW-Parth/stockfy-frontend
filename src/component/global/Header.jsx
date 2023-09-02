@@ -3,7 +3,6 @@ import ImgLogo from '../../assets/images/logo.svg';
 import ImgUser from '../../assets/images/user.svg';
 import { LOCAL_STORAGE_KEYS } from '../../helpers/constant';
 
-const userData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.USER));
 const Header = () => {
   return (
     <div className="header">
