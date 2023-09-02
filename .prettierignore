@@ -1,0 +1,10 @@
+node_modules
+output.log
+.DS_Store
+*.tgz
+*.log
+*.jpeg
+*.xlsx
+dist
+*.png
+build

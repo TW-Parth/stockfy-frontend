@@ -1,19 +1,16 @@
-.landing-header{
-    padding: 10px 0;
+.landing-header {
+  padding: 10px 0;
 
-    .nav-logo{
-        @extend .d-flex;
-        @extend .justify-content-center;
-        .navbar-brand{
-            img{
-                max-width: 150px;
-            }
+  .nav-logo {
+    @extend .d-flex;
+    @extend .justify-content-center;
+      .navbar-brand {
+        img {
+          max-width: 150px;
         }
-    }
+      }
+  }
 }
-
-
-
 .header{
     padding: 15px 0;
 }

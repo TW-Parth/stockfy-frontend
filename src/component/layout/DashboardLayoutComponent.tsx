@@ -1,6 +1,6 @@
-import React from "react";
-import Sidebar from "./Sidebar";
-import Header from "../global/Header";
+import React from 'react';
+import Sidebar from './Sidebar';
+import Header from '../global/Header';
 
 const DashboardLayoutComponent = ({ children }) => {
   return (

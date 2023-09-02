@@ -1,8 +1,8 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import Dashboard from "./index";
-import DashboardLayoutComponent from "../../component/layout/DashboardLayoutComponent";
-import Profile from "./Profile";
-import Settings from "./Settings";
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Dashboard from './index';
+import DashboardLayoutComponent from '../../component/layout/DashboardLayoutComponent';
+import Profile from './Profile';
+import Settings from './Settings';
 
 const DashBoardLayout = () => {
   return (
