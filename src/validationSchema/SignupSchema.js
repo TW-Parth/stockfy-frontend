@@ -10,7 +10,10 @@ const SignupSchema = Yup.object({
     .required("Password is required"),
   gstNumber: Yup.string().required("GST Number is required"),
   eCommerceName: Yup.string().required("E-Commerce Name is required"),
-  eCommerceWebsite: Yup.string().required("E-Commerce Website is required"),
+  eCommerceWebsite: Yup.string()
+    .url()
+    .trim()
+    .required("E-Commerce Website is required"),
   phoneNumber: Yup.string()
     .length(10, "Phone number should be of 10 characters")
     .required("Phone number is required"),

@@ -3,30 +3,34 @@ import TextField from "../../component/Input/TextField";
 import PasswordField from "../../component/Input/PasswordField";
 import { Link } from "react-router-dom";
 import SignupSchema from "../../validationSchema/SignupSchema";
+import { signUp } from "../../services/auth/auth.services";
 
 const Signup = () => {
-  const form = useFormik({
-    initialValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      gstNumber: "",
-      eCommerceName: "",
-      eCommerceWebsite: "",
-      phoneNumber: "",
-    },
-    validateOnBlur: true,
-    validateOnChange: true,
-    validationSchema: SignupSchema,
-    onSubmit: async (values) => {
-      try {
-        console.log(values, "values");
-      } catch (err) {
-        console.log(err);
-      }
-    },
-  });
+    
+    const form = useFormik({
+        initialValues: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            gstNumber: '',
+            eCommerceName: '',
+            eCommerceWebsite: '',
+            phoneNumber: '',
+        },
+        validateOnBlur: true,
+        validateOnChange: true,
+        validationSchema: SignupSchema,
+        onSubmit: async (values) => {
+            try {
+                const res = await signUp(values);
+                console.log(res);
+            }
+            catch(err) {
+                console.log(err);
+            }
+        }
+    })
 
   const {
     values,
