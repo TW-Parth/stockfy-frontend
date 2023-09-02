@@ -19,8 +19,8 @@ $light: #cdd2d5 !default;
 $dark-coffee: #5e3b1e; // dark text
 
 /*Theme color*/
-$primary: #17deeb; // theme color
-$secondary: #2b2b2b;
+$primary: #F2391A; // theme color
+$secondary: #ffb73f;
 $success: #00d058;
 $info: #298cf2;
 $warning: #f88a0a;
@@ -38,11 +38,11 @@ $theme-colors: (
 );
 
 $color-dark: $dark;
-$body-bg: #eeeeee;
-$body-color: $black !default;
+$body-bg: $black;
+$body-color: $white !default;
 $font-size-base: 1rem !default;
 $line-height-base: 1.75 !default;
-$link-color: #ee202e;
+$link-color: $primary;
 
 // $link-color: 'red';
 

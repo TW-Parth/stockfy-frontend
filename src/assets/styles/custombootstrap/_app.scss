@@ -1,12 +1,23 @@
 // App
 html,
 body {
+  font-family: $neue_montreal;
   -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
 
-
+a {
+  @include default_transition(0.3s, ease-in-out);
+}
 
 img {
   max-width: 100%;
 }
 
+
+
+.landing-banner{
+  padding: 50px 0;
+  height: calc(100vh - 170px);
+}
