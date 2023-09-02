@@ -1,19 +1,21 @@
 import { useFormik } from "formik";
-import LoginSchema from "../../validationSchema/LoginSchema";
 import TextField from "../../component/Input/TextField";
 import PasswordField from "../../component/Input/PasswordField";
 import { Link } from "react-router-dom";
+import SignupSchema from "../../validationSchema/SignupSchema";
 
-const Login = () => {
-
+const Signup = () => {
+    
     const form = useFormik({
         initialValues: {
+            firstName: '',
+            lastName: '',
             email: '',
             password: '',
         },
         validateOnBlur: true,
         validateOnChange: true,
-        validationSchema: LoginSchema,
+        validationSchema: SignupSchema,
         onSubmit: async (values) => {
             try {
                 console.log(values, 'values');
@@ -28,15 +30,17 @@ const Login = () => {
     
     return(
     <div className="Login-Container">
-        <h1>Login</h1>
+        <h1>Signup</h1>
         <form onSubmit={handleSubmit}>
+            <TextField label='First Name' name='firstName' value={values.firstName} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.firstName && errors.firstName)} errorMessage={errors.firstName}/>
+            <TextField label='Last Name' name='lastName' value={values.lastName} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.lastName && errors.lastName)} errorMessage={errors.lastName}/>
             <TextField label='Email' name='email' value={values.email} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.email && errors.email)} errorMessage={errors.email}/>
-            <PasswordField label='Password' name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.password && errors.password)} errorMessage={errors.password} />
+            <PasswordField label='Password' name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} disabled={isSubmitting} error={Boolean(touched.password && errors.password)} errorMessage={errors.password}/>
             <button type="submit" disabled={isSubmitting}>Submit</button>
-            <Link to={'/signup'}>Signup</Link>
+            <Link to={'/login'}>Login</Link>
         </form>
     </div>
     );
 }
 
-export default Login;
+export default Signup;
