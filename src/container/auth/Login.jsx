@@ -1,11 +1,10 @@
 import { useFormik } from 'formik';
-import LoginSchema from '../../validationSchema/LoginSchema';
-import TextField from '../../component/Input/TextField';
-import PasswordField from '../../component/Input/PasswordField';
 import { Link, useNavigate } from 'react-router-dom';
+import PasswordField from '../../component/Input/PasswordField';
+import TextField from '../../component/Input/TextField';
+import { LOCAL_STORAGE_KEYS } from '../../helpers/constant';
 import { login } from '../../services/auth/auth.services';
-import { toast } from 'react-toastify';
-import { SUCCESS_MESSAGE } from '../../helpers/constant';
+import LoginSchema from '../../validationSchema/LoginSchema';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -19,8 +18,8 @@ const Login = () => {
     validationSchema: LoginSchema,
     onSubmit: async (values) => {
       try {
-        await login(values);
-        toast.success(SUCCESS_MESSAGE.LOGIN);
+        const res = await login(values);
+        localStorage.setItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN , res?.data?.token);
         navigate('/dashboard');
       } catch (err) {
         console.log(err);
