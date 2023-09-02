@@ -1,12 +1,12 @@
-import './App.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import HomePage from './container/home/Homepage';
-import Login from './container/auth/Login';
-import Signup from './container/auth/Signup';
-import { LOCAL_STORAGE_KEYS } from './helpers/constant';
-import DashBoardLayout from './container/dashboard/DashboardLayout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
+import Login from './container/auth/Login';
+import Signup from './container/auth/Signup';
+import DashBoardLayout from './container/dashboard/DashboardLayout';
+import HomePage from './container/home/Homepage';
+import { LOCAL_STORAGE_KEYS } from './helpers/constant';
 
 const PublicRoutes = ({ children }) => {
   if (localStorage.getItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN) === null) {
@@ -49,7 +49,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <ToastContainer
-        position="top-right"
+        position="bottom-center"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
