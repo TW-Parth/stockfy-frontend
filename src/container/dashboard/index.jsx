@@ -55,12 +55,12 @@ const Dashboard = () => {
     getData();
   }, [])
 
-  return (<ResponsiveContainer height={500} width="100%">
+  return (<ResponsiveContainer height={750} width="100%">
       <LineChart data={data} margin={{ right: 25, top: 10 }}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" interval={'preserveStart'} />
+        <CartesianGrid strokeDasharray="3 3" strokeWidth={5}  />
+        <XAxis dataKey="name" interval={'preserveStart'} line />
         <YAxis interval={'preserveStart'} />
-        <Line type="monotone" dataKey="pv" stroke="#ffb73f" activeDot={{ r: 8 }} />
+        <Line type="monotone" dataKey="pv" stroke="#ffb73f" activeDot={{ r: 8 }} strokeWidth={10} />
       </LineChart>
     </ResponsiveContainer>)
 };
