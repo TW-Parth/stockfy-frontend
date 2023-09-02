@@ -27,7 +27,7 @@ function App() {
     <>
       <BrowserRouter basename="/">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<PublicRoutes><HomePage /></PublicRoutes>} />
           <Route
             path="/login"
             element={
@@ -45,7 +45,7 @@ function App() {
             }
           />
           <Route path="/*" element={<Navigate to="/" replace />} />
-          <Route path="/signup" Component={Signup} />
+          <Route path="/signup" element={<PublicRoutes><Signup /></PublicRoutes>} />
         </Routes>
       </BrowserRouter>
       <ToastContainer

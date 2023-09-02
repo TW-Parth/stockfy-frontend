@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { logout } from '../../services/auth/auth.services';
 
 const Sidebar = () => {
+
+  const location = useLocation();
   const navigate = useNavigate();
   const logoutHandler = async () => {
     try{
@@ -20,21 +22,21 @@ const Sidebar = () => {
         <div className="navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link active" to="/dashboard">
+              <Link className={`nav-link ${location.pathname === '/dashboard' ? 'active' : ''}`} to="/dashboard">
                 Dashboard
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/dashboard/profile">
+              <Link className={`nav-link ${location.pathname === '/dashboard/profile' ? 'active' : ''}`} to="/dashboard/profile">
                 Profile
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/dashboard/settings">
+              <Link className={`nav-link ${location.pathname === '/dashboard/settings' ? 'active' : ''}`} to="/dashboard/settings">
                 Settings
               </Link>
             </li>
-            <li className="nav-item">
+            <li className={`nav-item ${location.pathname === '/dashboard/subscription' ? 'active' : ''}`}>
               <Link className="nav-link" to="/dashboard/subscription">
                 Subscription
               </Link>
