@@ -17,3 +17,8 @@ export function getProfile(payload) {
 export function updateProfile(payload) {
   return AxiosInstance.put(API_URLS.UPDATE_PROFILE, convertJsonToFormData(payload));
 }
+
+export function logout() {
+  localStorage.clear;
+  return AxiosInstance.post(API_URLS.LOGOUT);
+}
