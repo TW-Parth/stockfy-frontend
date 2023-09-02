@@ -1,46 +1,40 @@
-import { useFormik } from "formik";
-import TextField from "../../component/Input/TextField";
-import PasswordField from "../../component/Input/PasswordField";
-import { Link } from "react-router-dom";
-import SignupSchema from "../../validationSchema/SignupSchema";
-import { signUp } from "../../services/auth/auth.services";
+import { useFormik } from 'formik';
+import TextField from '../../component/Input/TextField';
+import PasswordField from '../../component/Input/PasswordField';
+import { Link, useNavigate } from 'react-router-dom';
+import SignupSchema from '../../validationSchema/SignupSchema';
+import { signUp } from '../../services/auth/auth.services';
+import { toast } from 'react-toastify';
+import { SUCCESS_MESSAGE } from '../../helpers/constant';
 
 const Signup = () => {
-    
-    const form = useFormik({
-        initialValues: {
-            firstName: '',
-            lastName: '',
-            email: '',
-            password: '',
-            gstNumber: '',
-            eCommerceName: '',
-            eCommerceWebsite: '',
-            phoneNumber: '',
-        },
-        validateOnBlur: true,
-        validateOnChange: true,
-        validationSchema: SignupSchema,
-        onSubmit: async (values) => {
-            try {
-                const res = await signUp(values);
-                console.log(res);
-            }
-            catch(err) {
-                console.log(err);
-            }
-        }
-    })
+  const navigate = useNavigate();
+  const form = useFormik({
+    initialValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      gstNumber: '',
+      eCommerceName: '',
+      eCommerceWebsite: '',
+      phoneNumber: '',
+    },
+    validateOnBlur: true,
+    validateOnChange: true,
+    validationSchema: SignupSchema,
+    onSubmit: async (values) => {
+      try {
+        await signUp(values);
+        toast.success(SUCCESS_MESSAGE.REGISTER);
+        navigate('/login');
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  });
 
-  const {
-    values,
-    touched,
-    handleChange,
-    handleBlur,
-    errors,
-    isSubmitting,
-    handleSubmit,
-  } = form;
+  const { values, touched, handleChange, handleBlur, errors, isSubmitting, handleSubmit } = form;
 
   return (
     <div className="Login-Container">
@@ -136,9 +130,7 @@ const Signup = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         disabled={isSubmitting}
-                        error={Boolean(
-                          touched.eCommerceName && errors.eCommerceName
-                        )}
+                        error={Boolean(touched.eCommerceName && errors.eCommerceName)}
                         errorMessage={errors.eCommerceName}
                       />
                     </div>
@@ -153,9 +145,7 @@ const Signup = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         disabled={isSubmitting}
-                        error={Boolean(
-                          touched.eCommerceWebsite && errors.eCommerceWebsite
-                        )}
+                        error={Boolean(touched.eCommerceWebsite && errors.eCommerceWebsite)}
                         errorMessage={errors.eCommerceWebsite}
                       />
                     </div>
@@ -170,24 +160,18 @@ const Signup = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         disabled={isSubmitting}
-                        error={Boolean(
-                          touched.phoneNumber && errors.phoneNumber
-                        )}
+                        error={Boolean(touched.phoneNumber && errors.phoneNumber)}
                         errorMessage={errors.phoneNumber}
                       />
                     </div>
                   </div>
                   <div className="col-md-6 col-lg-6">
-                    <button
-                      className="btn btn-primary w-100 mb-2"
-                      type="submit"
-                      disabled={isSubmitting}
-                    >
+                    <button className="btn btn-primary w-100 mb-2" type="submit" disabled={isSubmitting}>
                       Submit
                     </button>
                   </div>
                   <div className="col-md-6 col-lg-6">
-                    <Link className="btn btn-secondary w-100" to={"/login"}>
+                    <Link className="btn btn-secondary w-100" to={'/login'}>
                       Login
                     </Link>
                   </div>

@@ -1,4 +1,4 @@
-import ImgLogo from "../../assets/images/logo.svg";
+import ImgLogo from '../../assets/images/logo.svg';
 
 const HomePage = () => {
   return (

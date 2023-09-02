@@ -1,8 +1,8 @@
-import React from "react";
-import Sidebar from "./Sidebar";
-import DashBoardLayout from "../../container/dashboard/DashboardLayout";
+import React from 'react';
+import Sidebar from './Sidebar';
+import DashBoardLayout from '../../container/dashboard/DashboardLayout';
 
-const DashboardLayoutComponent = ({children}) => {
+const DashboardLayoutComponent = ({ children }) => {
   return (
     <div>
       <Sidebar />

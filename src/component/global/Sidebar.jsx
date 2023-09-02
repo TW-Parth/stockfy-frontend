@@ -5,12 +5,7 @@ const Sidebar = () => {
         <nav className="navbar main-sidebar">
           <Link legacyBehavior href="/">
             <a className="navbar-brand">
-              <AppAssetImage
-                urls={{ svg: "/images/logo.svg" }}
-                width={76}
-                height={18}
-                alt="logo"
-              />
+              <AppAssetImage urls={{ svg: '/images/logo.svg' }} width={76} height={18} alt="logo" />
             </a>
           </Link>
           <div className="navbar-collapse" id="navbarSupportedContent">
@@ -36,9 +31,7 @@ const Sidebar = () => {
                   <span className="nav-link-icon">
                     <IconRetrospective />
                   </span>
-                  <span className="nav-link-label">
-                    Performance Retrospective
-                  </span>
+                  <span className="nav-link-label">Performance Retrospective</span>
                 </a>
               </li>
               <li className="nav-item">
