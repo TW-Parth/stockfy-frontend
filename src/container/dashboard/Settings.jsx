@@ -56,11 +56,12 @@ const Settings = () => {
                 <h3 className="mb-3 text-center">Setting</h3>
                 <form>
                   <div className="key-block">
-                    <label className="form-label font-700">Web-Hook</label>
-                    <Button variant="primary" onClick={handleShow}>
-                      Launch demo modal
-                    </Button>
-
+                    <div className='d-flex justify-content-between'>
+                      <label className="form-label font-700">Web-Hook</label>
+                      <Button className='btn p-0 bg-transparent border-0 text-primary' onClick={handleShow}>
+                        How To?
+                      </Button>
+                    </div>
                     <Modal show={show} onHide={handleClose}>
                       <Modal.Header closeButton>
                         <Modal.Title style={{color:'black'}}>Webhook Integration</Modal.Title>
