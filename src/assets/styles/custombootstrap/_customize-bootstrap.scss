@@ -75,24 +75,18 @@ $input-btn-padding-x: 1rem !default;
 $input-font-size: 13px !default;
 $input-line-height: 1.375 !default;
 
-$input-btn-padding-y-lg: 1rem !default;
-$input-btn-padding-x-lg: 1rem !default;
-$input-btn-font-size-lg: 16px !default;
-$input-btn-padding-y-sm: 0.625rem !default;
+
 
 // Buttons
-$btn-padding-y: 1.438rem !default;
-$btn-padding-x: 1.438rem !default;
-$btn-padding-y-sm: 0.5rem !default;
-$btn-padding-x-sm: $input-btn-padding-x !default;
-$btn-padding-y-lg: 0.925rem !default;
-$btn-padding-x-lg: $input-btn-padding-x !default;
-$btn-font-weight: $font-weight-medium !default;
-$btn-line-height: 1.3 !default;
-$btn-border-radius: 2.5rem !default;
+$btn-color: $white !default;
+$btn-padding-y: 0.775rem !default;
+$btn-padding-x: 1rem !default;
 
-$input-padding-y: 1.438rem !default;
-$input-padding-x: 1.438rem !default;
+
+$btn-line-height: 1.3 !default;
+$btn-border-radius: .75rem !default;
+
+
 $input-bg: $white;
 $input-color: $black !default;
 $input-placeholder-color: $black !default;
@@ -100,11 +94,11 @@ $input-font-size: 1rem !default;
 
 $input-border-color: #717171 !default;
 $input-focus-border-color: #717171 !default;
-$input-border-radius: 3.75rem !default;
+$input-border-radius: .75rem !default;
 $input-box-shadow: none !default;
 $input-focus-box-shadow: none !default;
 
-$form-check-input-width: 1.563em !default;
+$form-check-input-width: 1em !default;
 $form-check-input-checked-color: $white !default;
 $form-check-input-border: 1px solid $black !default;
 $form-check-input-border-radius: 0 !default;
@@ -115,6 +109,8 @@ $form-select-focus-box-shadow: none !default;
 $list-group-item-padding-y: 1rem;
 
 // cards
+$card-color: $black !default;
+$card-bg: none !default;
 $card-bg: #e7e7e7 !default;
 $card-spacer-y: 30px !default;
 $card-spacer-x: 30px !default;

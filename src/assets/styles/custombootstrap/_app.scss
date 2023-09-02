@@ -21,3 +21,13 @@ img {
   padding: 50px 0;
   height: calc(100vh - 170px);
 }
+
+
+.form-group{
+  @extend .mb-15;
+}
+
+
+.Login-Container{
+  padding: 50px 0;
+}
