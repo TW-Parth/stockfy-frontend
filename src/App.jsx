@@ -1,14 +1,17 @@
 import './App.css'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import HomePage from './container/home/Homepage';
 import Login from './container/auth/Login';
+import DashBoardLayout from './container/dashboard/DashboardLayout';
 
 function App() {
   return (
     <BrowserRouter basename="/">
       <Routes>
-        <Route path="/" Component={HomePage} />
-        <Route path="/login" Component={Login} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard/*" element={<DashBoardLayout />} />
+        <Route path="/*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   )
