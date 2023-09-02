@@ -5,7 +5,7 @@ const Benefits = () => {
     <div className="benefits-section">
       <div className="container">
         <div className="row align-items-center">
-          <h2 className="text-center mb-3">Benefits </h2>
+          <h2 className="text-center mb-5">Benefits </h2>
           <div className="col-md-6 col-lg-6">
             <div className="Benefits-img">
               <img src={ImgBenefits} alt="" />

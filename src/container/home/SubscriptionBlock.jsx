@@ -14,7 +14,7 @@ const SubscriptionBlock = () => {
             <div className="col-md-4 col-lg-4">
               <div className="sub-detail">
                 <h3>One for all</h3>
-                <p>Better for growing businesses that want more customers.</p>
+                <p>No Matter you are Big or Small a single subscription works for all.</p>
                 <p>Pay Yearly For 25% Off </p>
               </div>
             </div>
